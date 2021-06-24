@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+
+<project name="Welcome to Ant" default="run">
+    <target name="info">
+	    <echo>Welcome to Apache Ant first build program..!</echo>
+		
+    </target>
+ 
+    <target name="firstTask" depends="info">
+            <echo>Execute first activity..!</echo>
+
+    </target>
+
+
+<target name="compile" depends="firstTask">
+    <javac srcdir="src" destdir="target">
+    </javac>
+</target>
+
+<target name="run" depends="compile">
+     <java classname="Helloworld">
+        <classpath path="target" >
+       </classpath>
+    </java>
+
+
+</target>
+
+</project>
